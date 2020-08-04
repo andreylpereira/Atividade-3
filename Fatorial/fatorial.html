@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calcule o fatorial</title>
+    </head>
+    <body>
+
+        <div>
+            <h1>Digite abaixo o número para calcular o fatorial:</h1>
+            <input type="number" id="numeroFatorial" placeholder="Número"><br>
+            <button onclick="calcFatorial()">Calcular</button>
+            <button id="limparFatorial" onclick="limparFatorial()">Reset</button>
+            <p id="resultadoFatorial"></p>
+
+        </div>
+
+    </body>
+
+<script>
+
+function calcFatorial() {
+
+var n1_inputFatorial = Number(document.getElementById("numeroFatorial").value)
+var resFatorial = document.getElementById("resultadoFatorial")
+var n1Input = n1_inputFatorial
+
+
+var n2_inputFatorial = n1_inputFatorial - 1
+var fatorial = n1_inputFatorial * n2_inputFatorial
+
+
+if (n1_inputFatorial == 0 || n1_inputFatorial == 1) {
+    resFatorial.innerHTML = `${n1_inputFatorial}! = 1.`
+} else {
+   
+    while (n1_inputFatorial != 1 && n2_inputFatorial > 1) {
+        n1_inputFatorial--
+        n2_inputFatorial--
+        fatorial = (fatorial * n2_inputFatorial)
+    }
+    resFatorial.innerHTML = `${n1Input}! = ${fatorial}.`
+}
+}
+
+function limparFatorial() {
+document.getElementById("numeroFatorial").value = ""
+document.getElementById("resultadoFatorial").innerHTML = ""
+}
+
+</script>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calcule o Expoente</title>
+
+    </head>
+    <body>
+
+        <div>
+            <h1>Calcule o exponencial digitando abaixo a base e o expoente:</h1>
+            <input type="number" id="numeroBase" placeholder="Base">
+            <input type="number" id="expoente" placeholder="Expoente"><br>
+            <button onclick="calcExpoente()">Calcular</button>
+            <button onclick="limparExponenciacao()" id="limparExpoente">Limpar</button>
+            <p id="resultadoExponenciacao"></p>
+
+        </div>
+
+    </body>
+
+<script>
+function calcExpoente() {
+    
+    var numBase = document.getElementById("numeroBase").value
+    var numExpoente = document.getElementById("expoente").value
+
+    
+    var limpBaseExpoente = numBase * numBase
+    var contador = numExpoente
+
+   
+    for (i = contador - 1; i > 1; i--) {
+        limpBaseExpoente = limpBaseExpoente * numBase
+    }
+    
+    document.getElementById("resultadoExponenciacao").innerHTML = `${numBase} elevado a ${numExpoente} = ${limpBaseExpoente}.`
+}
+
+function limparExponenciacao() {
+    document.getElementById("numeroBase").value = ""
+    document.getElementById("expoente").value = ""
+    document.getElementById("resultadoExponenciacao").innerHTML = ""
+}
+</script>
+</html>
